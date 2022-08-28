@@ -26,5 +26,16 @@ namespace InventoryManagementSystemIA
         {
 
         }
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            AttendantID.Text = AttendantDGV.SelectedRows[0].Cells[0].Value.ToString();
+            AttendantName.Text = AttendantDGV.SelectedRows[0].Cells[1].Value.ToString();
+          AttendantAge.Text = AttendantDGV.SelectedRows[0].Cells[2].Value.ToString();
+            AttendantPhone.Text = AttendantDGV.SelectedRows[0].Cells[3].Value.ToString();
+           AttendantPW.Text= AttendantDGV.SelectedRows[0].Cells[4].Value.ToString();
+
+        }
     }
 }

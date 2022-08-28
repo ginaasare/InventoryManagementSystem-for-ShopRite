@@ -73,5 +73,41 @@ namespace InventoryManagementSystemIA
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Con.Open();
+
+                string query = "insert into ProductTable values(" + ProdID.Text + ", " +
+                    "'" + ProdName.Text + "' , '" + ProdQty.Text + "', "
+                    + ProdQty.Text + ", " + ProdPrice.Text + ",'" + SelectCategory.SelectedValue.ToString() + "')";
+                SqlCommand cmd = new SqlCommand(query, Con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Product has been added successfully");
+                Con.Close();
+                //populate();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ProdID.Text = ProductDGV.SelectedRows[0].Cells[0].Value.ToString();
+            ProdName.Text = ProductDGV.SelectedRows[0].Cells[1].Value.ToString();
+            ProdQty.Text = ProductDGV.SelectedRows[0].Cells[2].Value.ToString();
+            ProdPrice.Text = ProductDGV.SelectedRows[0].Cells[3].Value.ToString();
+            SelectCategory.SelectedValue = ProductDGV.SelectedRows[0].Cells[4].Value.ToString();
+        }
     }
 }

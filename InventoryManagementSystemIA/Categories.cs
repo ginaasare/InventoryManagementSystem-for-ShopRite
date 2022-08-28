@@ -59,6 +59,7 @@ namespace InventoryManagementSystemIA
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Category has been added successfully");
                 Con.Close();
+                populate();
 
             }catch(Exception ex)
             {
