@@ -63,10 +63,9 @@ namespace InventoryManagementSystemIA
         {
             try
             {
-                Con.Open();
-                  string query = "insert into AttendantTable values(" + AttendantID.Text + ", " +
-                    "'" + AttendantName.Text + "' , '" + AttendantAge.Text + "', "
-                    + AttendantPhone.Text + ", " + AttendantPW.Text + "')";
+                  Con.Open();
+                string query = "insert into AttendantTable values ( "  + AttendantID.Text + ", '" + AttendantAge.Text + "' , '" + AttendantName.Text + "','" + AttendantPhone.Text + "','" + AttendantPW.Text + "')";
+
                 SqlCommand cmd = new SqlCommand(query, Con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Attendant has been added successfully");
