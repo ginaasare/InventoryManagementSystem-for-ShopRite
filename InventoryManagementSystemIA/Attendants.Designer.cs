@@ -161,6 +161,7 @@
             this.button9.TabIndex = 22;
             this.button9.Text = "EDIT";
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button8
             // 
@@ -173,6 +174,7 @@
             this.button8.TabIndex = 21;
             this.button8.Text = "DELETE";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button7
             // 
@@ -185,6 +187,7 @@
             this.button7.TabIndex = 20;
             this.button7.Text = "ADD";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // label5
             // 
@@ -279,6 +282,7 @@
             this.button5.TabIndex = 27;
             this.button5.Text = "X";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button3
             // 

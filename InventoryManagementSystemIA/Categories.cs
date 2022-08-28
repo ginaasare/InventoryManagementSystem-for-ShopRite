@@ -109,7 +109,7 @@ namespace InventoryManagementSystemIA
                 {
                     Con.Open();
 
-                    string query = "Updat CategoryTable set catName = '" + catNameTb.Text + "'," +
+                    string query = "Update CategoryTable set catName = '" + catNameTb.Text + "'," +
                         " catDescription='" + catDescriptionTb.Text + "'where catID=" + catIDTb.Text + "";
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
@@ -132,6 +132,11 @@ namespace InventoryManagementSystemIA
             Products product = new Products();
             product.Show();
             this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
    

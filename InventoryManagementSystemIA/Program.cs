@@ -13,7 +13,7 @@ namespace InventoryManagementSystemIA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Attendants());//this loads the splash screen when the application runs
+            Application.Run(new Attendants());
         }
     }
 }

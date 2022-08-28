@@ -177,11 +177,11 @@
     <Compile Include="Attendants.Designer.cs">
       <DependentUpon>Attendants.cs</DependentUpon>
     </Compile>
-    <Compile Include="SpalshScreen.cs">
+    <Compile Include="SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SpalshScreen.Designer.cs">
-      <DependentUpon>SpalshScreen.cs</DependentUpon>
+    <Compile Include="SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Categories.resx">
       <DependentUpon>Categories.cs</DependentUpon>
@@ -204,8 +204,8 @@
     <EmbeddedResource Include="Attendants.resx">
       <DependentUpon>Attendants.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SpalshScreen.resx">
-      <DependentUpon>SpalshScreen.cs</DependentUpon>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
