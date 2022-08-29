@@ -100,12 +100,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(462, 136);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(748, 46);
+            this.label2.Size = new System.Drawing.Size(677, 52);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Welcome to Easy Inventory Management";
+            this.label2.Text = "Welcome to ShopRite Inventory ";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // comboBox1

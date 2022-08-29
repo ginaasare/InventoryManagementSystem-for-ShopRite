@@ -73,9 +73,9 @@
             this.panel1.Controls.Add(this.AttendantAge);
             this.panel1.Controls.Add(this.AttendantName);
             this.panel1.Controls.Add(this.AttendantID);
-            this.panel1.Location = new System.Drawing.Point(270, 34);
+            this.panel1.Location = new System.Drawing.Point(275, 30);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1034, 655);
+            this.panel1.Size = new System.Drawing.Size(1028, 665);
             this.panel1.TabIndex = 1;
             // 
             // AttendantPW
@@ -125,7 +125,7 @@
             this.AttendantDGV.RowHeadersVisible = false;
             this.AttendantDGV.RowHeadersWidth = 62;
             this.AttendantDGV.RowTemplate.Height = 28;
-            this.AttendantDGV.Size = new System.Drawing.Size(636, 536);
+            this.AttendantDGV.Size = new System.Drawing.Size(633, 545);
             this.AttendantDGV.TabIndex = 23;
             this.AttendantDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.AttendantDGV.ThemeStyle.AlternatingRowsStyle.Font = null;

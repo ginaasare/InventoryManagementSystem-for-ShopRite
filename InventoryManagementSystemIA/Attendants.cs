@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,7 +27,7 @@ namespace InventoryManagementSystemIA
 
         private void Attendants_Load(object sender, EventArgs e)
         {
-            populate();
+            Populate();
         }
 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -44,7 +45,7 @@ namespace InventoryManagementSystemIA
         {
             Application.Exit();
         }
-        private void populate()
+        private void Populate()
         {
             Con.Open();
             string query = "select * from AttendantTable";
@@ -64,13 +65,13 @@ namespace InventoryManagementSystemIA
             try
             {
                   Con.Open();
-                string query = "insert into AttendantTable values ( "  + AttendantID.Text + ", '" + AttendantAge.Text + "' , '" + AttendantName.Text + "','" + AttendantPhone.Text + "','" + AttendantPW.Text + "')";
+                string query = "insert into AttendantTable values ( "  + AttendantID.Text + ", '" + AttendantName.Text + "' , '" + AttendantAge.Text + "','" + AttendantPhone.Text + "','" + AttendantPW.Text + "')";
 
                 SqlCommand cmd = new SqlCommand(query, Con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Attendant has been added successfully");
                 Con.Close();
-                populate();
+                Populate();
 
             }
             catch (Exception ex)
@@ -87,7 +88,7 @@ namespace InventoryManagementSystemIA
                 {
                     MessageBox.Show("Select the Attendant to Delete");
                 }
-                else
+                else 
                 {
                     Con.Open();
                     string query = "delete from AttendantTable where attendantID = " + AttendantID.Text + "";
@@ -95,7 +96,7 @@ namespace InventoryManagementSystemIA
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Attendant has been deleted");
                     Con.Close();
-                    populate();
+                    Populate();
                 }
 
             }
@@ -110,8 +111,8 @@ namespace InventoryManagementSystemIA
         {
             try
             {
-                if (AttendantID.Text == "" || AttendantPhone.Text == ""
-                    || AttendantAge.Text == "" || AttendantName.Text == "" 
+                if (AttendantID.Text == "" || AttendantName.Text == ""
+                    || AttendantAge.Text == "" || AttendantPhone.Text == "" 
                     || AttendantPW.Text == "")
 
                 {
@@ -120,16 +121,16 @@ namespace InventoryManagementSystemIA
                 }
                 else
                 {
-                    Con.Open();
+                    Con.Open(); 
 
-                    string query = "Update AttendantTable set attendantName = '" + AttendantName.Text + "'," +
-                        "attendantPhone= '" + AttendantPhone.Text + "attendantPW='" + AttendantPW.Text+
-                        " attendantAge='" + AttendantAge.Text + "'where attendantID=" + AttendantID.Text + "," ;
+                    string query = "Update AttendantTable set attendantName = '" + AttendantName.Text + "', attendantAge= '" + 
+                        AttendantAge.Text + "', attendantPhone = '" + AttendantPhone.Text + "', attendantPW= '"
+                        + AttendantPW.Text + "' where attendantID = '" + AttendantID.Text + "'" ;
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Attendant Updated");
                     Con.Close();
-                    populate();
+                    Populate();
                 }
 
 

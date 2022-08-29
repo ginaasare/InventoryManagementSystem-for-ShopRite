@@ -83,11 +83,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(496, 124);
+            this.label1.Location = new System.Drawing.Point(460, 121);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(601, 52);
+            this.label1.Size = new System.Drawing.Size(687, 52);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Easy Inventory Management";
+            this.label1.Text = "ShopRite Inventory Management";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // timer1
