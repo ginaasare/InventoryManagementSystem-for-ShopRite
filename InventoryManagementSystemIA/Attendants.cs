@@ -72,6 +72,11 @@ namespace InventoryManagementSystemIA
                 MessageBox.Show("Attendant has been added successfully");
                 Con.Close();
                 Populate();
+                AttendantID.Text = "";
+                AttendantName.Text = "";
+                AttendantAge.Text = "";
+                AttendantPhone.Text = "";
+                AttendantPW.Text = "";
 
             }
             catch (Exception ex)
@@ -97,6 +102,14 @@ namespace InventoryManagementSystemIA
                     MessageBox.Show("Attendant has been deleted");
                     Con.Close();
                     Populate();
+                    AttendantID.Text = "";
+                    AttendantName.Text = "";
+                    AttendantAge.Text = "";
+                    AttendantPhone.Text = "";
+                    AttendantPW.Text = "";
+
+
+
                 }
 
             }
@@ -131,6 +144,11 @@ namespace InventoryManagementSystemIA
                     MessageBox.Show("Attendant Updated");
                     Con.Close();
                     Populate();
+                    AttendantID.Text = "";
+                    AttendantName.Text = "";
+                    AttendantAge.Text = "";
+                    AttendantPhone.Text = "";
+                    AttendantPW.Text = "";
                 }
 
 

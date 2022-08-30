@@ -19,7 +19,7 @@ namespace InventoryManagementSystemIA
         SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Gina\Documents\inventory.mdf;Integrated Security=True;Connect Timeout=30");
 
         private void fillComboBox()
-            //populates the combobox with the databse categories
+        //populates the combobox with the databse categories
         {
             Con.Open();
             SqlCommand cmd = new SqlCommand("select catName from CategoryTable", Con);
@@ -35,6 +35,7 @@ namespace InventoryManagementSystemIA
         private void Products_Load(object sender, EventArgs e)
         {
             fillComboBox();
+            populate();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -54,7 +55,7 @@ namespace InventoryManagementSystemIA
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Categories category =  new Categories();
+            Categories category = new Categories();
             category.Show();
             this.Hide();
         }
@@ -71,9 +72,43 @@ namespace InventoryManagementSystemIA
 
         private void button8_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (ProdID.Text == "")
+                {
+                    MessageBox.Show("Select the product to Delete");
+                }
+                else
+                {
+                    Con.Open();
+                    string query = "delete from CategoryTable where catID = " + ProdID.Text + "";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Product entry has been deleted successfully");
+                    Con.Close();
+                    populate();
+                }
 
+            }
+            catch (Exception ex)
+
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
+        private void populate()
+        {
+            Con.Open();
+            string query = "select * from ProductTable";
+            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
+            SqlCommandBuilder buider = new SqlCommandBuilder(sda);
+            var dataset = new DataSet();
+            sda.Fill(dataset);
+            ProductDGV.DataSource = dataset.Tables[0];
+            Con.Close();
+
+        }
         private void button2_Click(object sender, EventArgs e)
         {
 
@@ -86,13 +121,18 @@ namespace InventoryManagementSystemIA
                 Con.Open();
 
                 string query = "insert into ProductTable values(" + ProdID.Text + ", " +
-                    "'" + ProdName.Text + "' , '" + ProdQty.Text + "', "
-                    + ProdQty.Text + ", " + ProdPrice.Text + ",'" + SelectCategory.SelectedValue.ToString() + "')";
+                    "  '"+ ProdName.Text + "' , '" + ProdQty.Text + "' , '"
+                    + ProdPrice.Text + "','" + SelectCategory.SelectedValue.ToString() + "')";
                 SqlCommand cmd = new SqlCommand(query, Con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Product has been added successfully");
                 Con.Close();
-                //populate();
+                populate();
+                ProdID.Text = "";
+                ProdName.Text = "";
+                ProdQty.Text = "";
+                ProdPrice.Text = "";
+                _ = SelectCategory.SelectedValue.ToString() == " ";
 
             }
             catch (Exception ex)
@@ -108,6 +148,50 @@ namespace InventoryManagementSystemIA
             ProdQty.Text = ProductDGV.SelectedRows[0].Cells[2].Value.ToString();
             ProdPrice.Text = ProductDGV.SelectedRows[0].Cells[3].Value.ToString();
             SelectCategory.SelectedValue = ProductDGV.SelectedRows[0].Cells[4].Value.ToString();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ProdID.Text == "" || ProdName.Text == ""
+                    || ProdQty.Text == "" || ProdPrice.Text == "" )
+                //|| SelectCategory.SelectedValue.ToString() == ""
+
+                {
+                    MessageBox.Show("Missing Details ");
+
+                }
+                else
+                {
+                    Con.Open();
+
+                    string query = "Update ProductTable set prodName = '" + ProdName.Text + "', " + " prodQty='" + ProdQty.Text + "'," +" prodPrice='" + ProdPrice.Text + "'," + "prodCat ='" + SelectCategory.SelectedValue.ToString()   +  "'where ProductID=" + ProdID.Text + "";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Product Has Been Updated Successfully");
+                    Con.Close();
+                    populate();
+
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void SelectCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
