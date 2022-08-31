@@ -15,6 +15,8 @@ namespace InventoryManagementSystemIA
         public Products()
         {
             InitializeComponent();
+
+
         }
         SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Gina\Documents\inventory.mdf;Integrated Security=True;Connect Timeout=30");
 
@@ -87,6 +89,11 @@ namespace InventoryManagementSystemIA
                     MessageBox.Show("Product entry has been deleted successfully");
                     Con.Close();
                     populate();
+                    ProdID.Text = "";
+                    ProdName.Text = "";
+                    ProdQty.Text = "";
+                    ProdPrice.Text = "";
+                    _ = SelectCategory.SelectedValue.ToString() == " ";
                 }
 
             }
@@ -172,7 +179,11 @@ namespace InventoryManagementSystemIA
                     MessageBox.Show("Product Has Been Updated Successfully");
                     Con.Close();
                     populate();
-
+                    ProdID.Text = "";
+                    ProdName.Text = "";
+                    ProdQty.Text = "";
+                    ProdPrice.Text = "";
+                    _ = SelectCategory.SelectedValue.ToString() == " ";
                 }
 
 

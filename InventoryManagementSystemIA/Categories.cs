@@ -10,6 +10,7 @@ namespace InventoryManagementSystemIA
         public Categories()
         {
             InitializeComponent();
+            populate();
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -46,16 +47,32 @@ namespace InventoryManagementSystemIA
         SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Gina\Documents\inventory.mdf;Integrated Security=True;Connect Timeout=30");
         private void button7_Click(object sender, EventArgs e)
         {
+
+
+
             try
             {
-                Con.Open();
+                if (catIDTb.Text == "" || catNameTb.Text == ""
+                    || catDescriptionTb.Text == "")
 
-                string query = "insert into CategoryTable values(" + catIDTb.Text + ", '" + catNameTb.Text + "' , '" + catDescriptionTb.Text + "')";
-                SqlCommand cmd = new SqlCommand(query, Con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Category has been added successfully");
-                Con.Close();
-                populate();
+                    {
+
+                    MessageBox.Show("Missing Details ");
+
+                }
+                    else {
+
+                    Con.Open();
+                    string query = "insert into CategoryTable values(" + catIDTb.Text + ", '" + catNameTb.Text + "' , '" + catDescriptionTb.Text + "')";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Category has been added successfully");
+                    Con.Close();
+                    populate();
+                }
+               
+
+              
 
             }
             catch (Exception ex)
