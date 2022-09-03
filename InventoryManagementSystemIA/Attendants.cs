@@ -159,6 +159,20 @@ namespace InventoryManagementSystemIA
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Products product = new Products();
+            product.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Categories category = new Categories();
+            category.Show();
+            this.Hide();
+        }
     }
     }
 

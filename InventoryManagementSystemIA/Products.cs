@@ -16,7 +16,7 @@ namespace InventoryManagementSystemIA
         {
             InitializeComponent();
 
-
+             
         }
         SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Gina\Documents\inventory.mdf;Integrated Security=True;Connect Timeout=30");
 
@@ -202,7 +202,9 @@ namespace InventoryManagementSystemIA
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Attendants attendant = new Attendants();
+            attendant.Show();
+            this.Hide();
         }
     }
 }

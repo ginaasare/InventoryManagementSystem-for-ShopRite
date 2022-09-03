@@ -67,7 +67,7 @@ namespace InventoryManagementSystemIA
             }
             else
             {
-                if (SelectRole.SelectedItem.ToString() =="Admin")
+                if (SelectRole.SelectedItem.ToString() == "Admin")
                 {
                     if (usernameTb.Text == "Admin" && passwordTb.Text == "Admin" )
                     {

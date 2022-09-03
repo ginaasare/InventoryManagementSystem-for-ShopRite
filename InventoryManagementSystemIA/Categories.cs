@@ -153,6 +153,13 @@ namespace InventoryManagementSystemIA
         {
             Application.Exit();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Attendants attendant = new Attendants();
+            attendant.Show();
+            this.Hide();
+        }
     }
 
 }
