@@ -63,10 +63,11 @@ namespace InventoryManagementSystemIA
             if (usernameTb.Text == "" || passwordTb.Text == "")
             {
                 MessageBox.Show("Missing details" +
-                    "Enter username or password");
+                    " Enter username or password");
             }
             else
             {
+                //if(SelectRole.SelectedIndex > -1  )
                 if (SelectRole.SelectedItem.ToString() == "Admin")
                 {
                     if (usernameTb.Text == "Admin" && passwordTb.Text == "Admin" )
@@ -80,7 +81,7 @@ namespace InventoryManagementSystemIA
                         MessageBox.Show("Enter the correct Username and Password if you are an Admin");
                     }
                 }
-                else if (SelectRole.SelectedItem.ToString() == "Shop Attendant")
+                else if  (SelectRole.SelectedItem.ToString() == "Shop Attendant")
                 {
                     MessageBox.Show("You are an Attendant");
                 }
