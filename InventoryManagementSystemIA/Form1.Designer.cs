@@ -198,7 +198,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1304, 689);
+            this.ClientSize = new System.Drawing.Size(1304, 774);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.clearform);
             this.Controls.Add(this.login);

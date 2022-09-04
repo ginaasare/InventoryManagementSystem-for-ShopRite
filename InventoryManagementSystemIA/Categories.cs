@@ -95,7 +95,7 @@ namespace InventoryManagementSystemIA
         private void populate()
         {
             Con.Open();
-            string query = "select * from CategoryTable";
+            string query = "select catID as ID, catName as Name, catDescription as Description from CategoryTable";
             SqlDataAdapter sda = new SqlDataAdapter(query, Con);
             SqlCommandBuilder buider = new SqlCommandBuilder(sda);
             var dataset = new DataSet();
@@ -158,6 +158,13 @@ namespace InventoryManagementSystemIA
         {
             Attendants attendant = new Attendants();
             attendant.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Sales sale = new Sales();
+            sale.Show();
             this.Hide();
         }
     }

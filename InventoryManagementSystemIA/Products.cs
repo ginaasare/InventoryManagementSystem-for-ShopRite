@@ -107,7 +107,7 @@ namespace InventoryManagementSystemIA
         private void populate()
         {
             Con.Open();
-            string query = "select * from ProductTable";
+            string query = "select productID as ID, prodName as Name, prodQty as Quantity, prodPrice as Price, prodCat as Category from ProductTable";
             SqlDataAdapter sda = new SqlDataAdapter(query, Con);
             SqlCommandBuilder buider = new SqlCommandBuilder(sda);
             var dataset = new DataSet();

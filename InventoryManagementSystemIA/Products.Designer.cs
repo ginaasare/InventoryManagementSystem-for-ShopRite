@@ -79,7 +79,7 @@
             this.panel1.Controls.Add(this.ProdID);
             this.panel1.Location = new System.Drawing.Point(272, 34);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1034, 655);
+            this.panel1.Size = new System.Drawing.Size(1034, 754);
             this.panel1.TabIndex = 0;
             // 
             // label6
@@ -144,7 +144,7 @@
             this.ProductDGV.RowHeadersVisible = false;
             this.ProductDGV.RowHeadersWidth = 62;
             this.ProductDGV.RowTemplate.Height = 28;
-            this.ProductDGV.Size = new System.Drawing.Size(636, 536);
+            this.ProductDGV.Size = new System.Drawing.Size(636, 631);
             this.ProductDGV.TabIndex = 23;
             this.ProductDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.ProductDGV.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -362,7 +362,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1304, 689);
+            this.ClientSize = new System.Drawing.Size(1304, 800);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);

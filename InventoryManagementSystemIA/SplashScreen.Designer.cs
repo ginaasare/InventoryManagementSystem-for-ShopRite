@@ -53,7 +53,7 @@
             this.guna2CircleButton2.Location = new System.Drawing.Point(134, 329);
             this.guna2CircleButton2.Name = "guna2CircleButton2";
             this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton2.Size = new System.Drawing.Size(228, 348);
+            this.guna2CircleButton2.Size = new System.Drawing.Size(228, 421);
             this.guna2CircleButton2.TabIndex = 3;
             // 
             // guna2CircleButton1
@@ -64,7 +64,7 @@
             this.guna2CircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton1.Location = new System.Drawing.Point(105, 12);
+            this.guna2CircleButton1.Location = new System.Drawing.Point(96, 25);
             this.guna2CircleButton1.Name = "guna2CircleButton1";
             this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton1.Size = new System.Drawing.Size(293, 298);
@@ -72,7 +72,7 @@
             // 
             // SplashProgressBar
             // 
-            this.SplashProgressBar.Location = new System.Drawing.Point(506, 645);
+            this.SplashProgressBar.Location = new System.Drawing.Point(505, 718);
             this.SplashProgressBar.Name = "SplashProgressBar";
             this.SplashProgressBar.Size = new System.Drawing.Size(475, 21);
             this.SplashProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
@@ -83,7 +83,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(460, 121);
+            this.label1.Location = new System.Drawing.Point(430, 123);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(687, 52);
             this.label1.TabIndex = 5;
@@ -98,7 +98,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(536, 215);
+            this.label2.Location = new System.Drawing.Point(500, 231);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(561, 25);
             this.label2.TabIndex = 6;
@@ -109,7 +109,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(438, 646);
+            this.label3.Location = new System.Drawing.Point(425, 718);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 20);
             this.label3.TabIndex = 7;
@@ -120,7 +120,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(501, 610);
+            this.label4.Location = new System.Drawing.Point(501, 686);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(222, 20);
             this.label4.TabIndex = 8;
@@ -161,7 +161,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(1304, 689);
+            this.ClientSize = new System.Drawing.Size(1304, 751);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
