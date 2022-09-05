@@ -38,7 +38,20 @@ namespace InventoryManagementSystemIA
         private void populate()
         {
             Con.Open();
-            string query = "select prodName as Name, prodQty as Quantity from ProductTable";
+            string query = "select prodName as Name, prodPrice as Price from ProductTable";
+            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
+            SqlCommandBuilder buider = new SqlCommandBuilder(sda);
+            var dataset = new DataSet();
+            sda.Fill(dataset);
+            ProductDGV1.DataSource = dataset.Tables[0];
+            Con.Close();
+
+        }
+
+        private void populatebill()
+        {
+            Con.Open();
+            string query = "select prodName as Name, prodPrice as Price from ProductTable";
             SqlDataAdapter sda = new SqlDataAdapter(query, Con);
             SqlCommandBuilder buider = new SqlCommandBuilder(sda);
             var dataset = new DataSet();
@@ -71,6 +84,7 @@ namespace InventoryManagementSystemIA
         private void Sales_Load(object sender, EventArgs e)
         {
             populate();
+            populatebill();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -97,22 +111,74 @@ namespace InventoryManagementSystemIA
 
         private void Date_Click(object sender, EventArgs e)
         {
-            Date.Text = DateTime.Today.Day.ToString() + "/" + DateTime.Today.Month.ToString() + "/" + DateTime.Today.Year.ToString();
+            Datelabel.Text = DateTime.Today.Day.ToString() + "/" + DateTime.Today.Month.ToString() + "/" + DateTime.Today.Year.ToString();
         }
 
+        int GrandTotal = 0, n = 0;
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+            if (BillID.Text == "") 
+            {
+                MessageBox.Show("Enter Bill ID");
+
+
+            }
+
+            else
+            {
+                try
+                {
+                    Con.Open();
+
+                    string query = "insert into BillTable values(" + BillID.Text + ", " +
+                        "  '" + AttendantNameLabel.Text + "' , '" + Datelabel.Text + "' , '"
+                        + Amountlabel.Text + ")";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Order has been added successfully");
+                    Con.Close();
+                    populatebill();
+                    /* BillID.Text = "";
+                     ProdName.Text = "";
+                     ProdQty.Text = "";
+                     ProdPrice.Text = "";
+                     _ = SelectCategory.SelectedValue.ToString() == " ";*/
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+        }
         private void button2_Click(object sender, EventArgs e)
         {
-            int n = 0, total = Convert.ToInt32(ProdQty.Text) * Convert.ToInt32(ProdPrice.Text);
-            int GrandTotal = 0;
-            DataGridViewRow row = new DataGridViewRow();
-            row.CreateCells(ORDERDGV);
-            row.Cells[0].Value = n + 1;
-            row.Cells[1].Value = ProdName.Text;
-            row.Cells[2].Value = ProdPrice.Text;
-            row.Cells[3].Value = ProdQty.Text;
-            row.Cells[4].Value = Convert.ToInt32(ProdQty.Text) * Convert.ToInt32(ProdPrice.Text);
-            ORDERDGV.Rows.Add(row);
-            GrandTotal = GrandTotal + total;
+
+            if (ProdName.Text == " " || ProdQty.Text == "")
+            
+            
+            {
+                MessageBox.Show("Product Details are missing");
+            
+            }
+            else {
+                int total = Convert.ToInt32(ProdPrice.Text) * Convert.ToInt32(ProdQty.Text);
+
+                DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(ORDERDGV);
+                row.Cells[0].Value = n + 1;
+                row.Cells[1].Value = ProdName.Text;
+                row.Cells[2].Value = ProdPrice.Text;
+                row.Cells[3].Value = ProdQty.Text;
+                row.Cells[4].Value = Convert.ToInt32(ProdQty.Text) * Convert.ToInt32(ProdPrice.Text);
+                ORDERDGV.Rows.Add(row);
+                n++;
+                GrandTotal = GrandTotal + total;
+                Amountlabel.Text = "GHS" + GrandTotal;
+            }
         }
     }
 }
