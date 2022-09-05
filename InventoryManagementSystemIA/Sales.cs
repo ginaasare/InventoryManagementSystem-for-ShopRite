@@ -90,9 +90,29 @@ namespace InventoryManagementSystemIA
 
         private void ProductDGV1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            ProdName.Text = ProductDGV1.SelectedRows[0].Cells[1].Value.ToString();
-            ProdQty.Text = ProductDGV1.SelectedRows[0].Cells[2].Value.ToString();
+            ProdName.Text = ProductDGV1.SelectedRows[0].Cells[0].Value.ToString();
+            ProdPrice.Text = ProductDGV1.SelectedRows[0].Cells[1].Value.ToString();
 
+        }
+
+        private void Date_Click(object sender, EventArgs e)
+        {
+            Date.Text = DateTime.Today.Day.ToString() + "/" + DateTime.Today.Month.ToString() + "/" + DateTime.Today.Year.ToString();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int n = 0, total = Convert.ToInt32(ProdQty.Text) * Convert.ToInt32(ProdPrice.Text);
+            int GrandTotal = 0;
+            DataGridViewRow row = new DataGridViewRow();
+            row.CreateCells(ORDERDGV);
+            row.Cells[0].Value = n + 1;
+            row.Cells[1].Value = ProdName.Text;
+            row.Cells[2].Value = ProdPrice.Text;
+            row.Cells[3].Value = ProdQty.Text;
+            row.Cells[4].Value = Convert.ToInt32(ProdQty.Text) * Convert.ToInt32(ProdPrice.Text);
+            ORDERDGV.Rows.Add(row);
+            GrandTotal = GrandTotal + total;
         }
     }
 }
