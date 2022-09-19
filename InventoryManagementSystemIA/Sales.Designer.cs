@@ -40,6 +40,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.ORDERDGV = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.productID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amountlabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -62,11 +67,6 @@
             this.ProdName = new System.Windows.Forms.TextBox();
             this.BillID = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
-            this.productID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ORDERDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductDGV2)).BeginInit();
@@ -99,9 +99,9 @@
             this.panel1.Controls.Add(this.ProdQty);
             this.panel1.Controls.Add(this.ProdName);
             this.panel1.Controls.Add(this.BillID);
-            this.panel1.Location = new System.Drawing.Point(189, 57);
+            this.panel1.Location = new System.Drawing.Point(227, 33);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1098, 723);
+            this.panel1.Size = new System.Drawing.Size(1067, 741);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -173,6 +173,37 @@
             this.ORDERDGV.ThemeStyle.RowsStyle.Height = 28;
             this.ORDERDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.ORDERDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.ORDERDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ORDERDGV_CellContentClick);
+            // 
+            // productID
+            // 
+            this.productID.HeaderText = "ID";
+            this.productID.MinimumWidth = 8;
+            this.productID.Name = "productID";
+            // 
+            // productName
+            // 
+            this.productName.HeaderText = "Name";
+            this.productName.MinimumWidth = 8;
+            this.productName.Name = "productName";
+            // 
+            // productPrice
+            // 
+            this.productPrice.HeaderText = "Price";
+            this.productPrice.MinimumWidth = 8;
+            this.productPrice.Name = "productPrice";
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.MinimumWidth = 8;
+            this.Quantity.Name = "Quantity";
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total";
+            this.Total.MinimumWidth = 8;
+            this.Total.Name = "Total";
             // 
             // Amountlabel
             // 
@@ -487,49 +518,19 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.Red;
-            this.button5.Location = new System.Drawing.Point(1231, 15);
+            this.button5.Location = new System.Drawing.Point(1241, -2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(54, 39);
+            this.button5.Size = new System.Drawing.Size(51, 35);
             this.button5.TabIndex = 31;
             this.button5.Text = "X";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // productID
-            // 
-            this.productID.HeaderText = "ID";
-            this.productID.MinimumWidth = 8;
-            this.productID.Name = "productID";
-            // 
-            // productName
-            // 
-            this.productName.HeaderText = "Name";
-            this.productName.MinimumWidth = 8;
-            this.productName.Name = "productName";
-            // 
-            // productPrice
-            // 
-            this.productPrice.HeaderText = "Price";
-            this.productPrice.MinimumWidth = 8;
-            this.productPrice.Name = "productPrice";
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.MinimumWidth = 8;
-            this.Quantity.Name = "Quantity";
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.MinimumWidth = 8;
-            this.Total.Name = "Total";
-            // 
             // Sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1307, 807);
+            this.ClientSize = new System.Drawing.Size(1304, 780);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

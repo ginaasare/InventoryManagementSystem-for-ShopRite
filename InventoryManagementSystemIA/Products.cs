@@ -118,7 +118,9 @@ namespace InventoryManagementSystemIA
         }
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Sales sale = new Sales();
+            sale.Show();
+            this.Hide();
         }
 
         private void button7_Click(object sender, EventArgs e)

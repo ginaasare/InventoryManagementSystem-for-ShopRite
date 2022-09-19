@@ -154,6 +154,12 @@ namespace InventoryManagementSystemIA
 
             }
         }
+
+        private void ORDERDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
 
